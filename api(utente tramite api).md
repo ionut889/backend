@@ -1,6 +1,6 @@
 import requests
 
-# URL base dell'API di test
+
 BASE_URL = "https://reqres.in/api/users"
 
 def crea_utente(nome, lavoro):
@@ -25,20 +25,20 @@ def leggi_utente(user_id):
 def main():
     print("=== Gestione Utenti con API ===")
     
-    # Input dall'utente
+   
     nome = input("Inserisci il nome: ")
     lavoro = input("Inserisci il lavoro: ")
     
-    # Creiamo un nuovo utente
+   
     utente_creato = crea_utente(nome, lavoro)
     if utente_creato:
         print("\n✅ Utente creato con successo!")
         print("Dettagli:", utente_creato)
         
-        # Otteniamo l'ID generato
+        
         user_id = utente_creato["id"]
         
-        # Recuperiamo i dati dell'utente
+       
         print("\n🔎 Recupero dati dell'utente con ID:", user_id)
         utente = leggi_utente(user_id)
         
